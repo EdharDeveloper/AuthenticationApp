@@ -3,6 +3,12 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 
+builder.Services.AddAuthentication("Cookie").AddCookie("Cookie", builder =>
+{
+    builder.LoginPath = "/Login";
+});
+
+builder.Services.AddAuthorization();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -17,8 +23,10 @@ app.UseHttpsRedirection();
 app.UseStaticFiles();
 
 app.UseRouting();
+app.UseAuthentication();
 
 app.UseAuthorization();
+
 
 app.MapControllerRoute(
     name: "default",
