@@ -1,16 +1,10 @@
-using Authorization.Base.Controllers;
+using Authorization._2auth.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
-
-builder.Services.AddAuthentication("Cookie").AddCookie("Cookie", builder =>
-{
-    builder.LoginPath = "/Login";
-});
-
-builder.Services.AddAuthorization();
+builder.Services.AddTransient<ICookieSeedAppService, CookieSeedAppService>();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -25,21 +19,12 @@ app.UseHttpsRedirection();
 app.UseStaticFiles();
 
 app.UseRouting();
-app.UseAuthentication();
 
 app.UseAuthorization();
-app.UseMiddleware<RequestHandler>();
-
-app.Map("/userName", builder =>
-{
-    builder.Run(async (conext) =>
-    {
-        conext.Response.WriteAsync($"<!DOCTYPE html>\r\n<html>\r\n<head>\r\n<title>Page Title</title>\r\n</head>\r\n<body>\r\n\r\n<h1>{conext.Items["user"]}</h1>\r\n<p>This is a paragraph.</p>\r\n\r\n</body>\r\n</html>");
-    });
-});
 
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");
 
 app.Run();
+

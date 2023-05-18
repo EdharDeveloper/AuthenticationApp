@@ -9,7 +9,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Authorization.Role", "Autho
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Authorization.EntityFramework", "Authorization.EntityFramework\Authorization.EntityFramework.csproj", "{89872468-FBD0-4552-8744-933B01828FA7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PasswordHasher", "PasswordHasher\PasswordHasher.csproj", "{87714D7D-CE20-48F7-9103-6D1A0B0B8FD6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PasswordHasher", "PasswordHasher\PasswordHasher.csproj", "{87714D7D-CE20-48F7-9103-6D1A0B0B8FD6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Authorization.2auth", "Authorization.2auth\Authorization.2auth.csproj", "{35CB5880-C433-49DB-9E6A-13EB35873D71}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{87714D7D-CE20-48F7-9103-6D1A0B0B8FD6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{87714D7D-CE20-48F7-9103-6D1A0B0B8FD6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{87714D7D-CE20-48F7-9103-6D1A0B0B8FD6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{35CB5880-C433-49DB-9E6A-13EB35873D71}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{35CB5880-C433-49DB-9E6A-13EB35873D71}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{35CB5880-C433-49DB-9E6A-13EB35873D71}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{35CB5880-C433-49DB-9E6A-13EB35873D71}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
